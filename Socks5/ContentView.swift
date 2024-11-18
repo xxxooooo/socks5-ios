@@ -12,7 +12,8 @@ struct ContentView: View {
     @State private var listenPortText: String = "1080"
     @State private var udpListenAddrText: String = ""
     @State private var udpListenPortText: String = "1080"
-    @State private var bindAddrText: String = "::"
+    @State private var bindIpv4AddrText: String = "0.0.0.0"
+    @State private var bindIpv6AddrText: String = "::"
     @State private var bindIfaceText: String = ""
     @State private var authUserText: String = ""
     @State private var authPassText: String = ""
@@ -79,11 +80,22 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity)
                 .disabled(isRunning)
 
-            Text("Bind Address:")
+            Text("Bind IPv4 Address:")
                 .font(.headline)
                 .padding(.bottom, 0)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            TextField("", text: $bindAddrText)
+            TextField("", text: $bindIpv4AddrText)
+                .padding(.top, 0)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocapitalization(.none)
+                .frame(maxWidth: .infinity)
+                .disabled(isRunning)
+
+            Text("Bind IPv6 Address:")
+                .font(.headline)
+                .padding(.bottom, 0)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            TextField("", text: $bindIpv6AddrText)
                 .padding(.top, 0)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocapitalization(.none)
@@ -143,7 +155,8 @@ struct ContentView: View {
                               udp-port: \(udpListenPortText)
                               udp-listen-address: '\(udpListenAddrText)'
                               listen-ipv6-only: \(listenIpv6OnlyToggle)
-                              bind-address: '\(bindAddrText)'
+                              bind-address-v4: '\(bindIpv4AddrText)'
+                              bind-address-v6: '\(bindIpv6AddrText)'
                               bind-interface: '\(bindIfaceText)'
                             auth:
                               username: '\(authUserText)'
