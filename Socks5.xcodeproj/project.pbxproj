@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,10 @@
 		D30F96712C1809EB002DB6BF /* HevSocks5Server.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HevSocks5Server.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2B1F97722D5461BE00FC7F9F /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		D30F96572C18058B002DB6BF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -41,6 +45,7 @@
 				D30F96712C1809EB002DB6BF /* HevSocks5Server.xcframework */,
 				D30F965C2C18058B002DB6BF /* Socks5 */,
 				D30F965B2C18058B002DB6BF /* Products */,
+				2B1F97722D5461BE00FC7F9F /* Views */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +90,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2B1F97722D5461BE00FC7F9F /* Views */,
 			);
 			name = Socks5;
 			productName = Socks5;
